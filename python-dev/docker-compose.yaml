@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  jupyterlab:
+    image: python-dev:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ~/Documents/try_everything:/root/try_everything
+    entrypoint: ["fish", "--command"]
+    command: ["python -m jupyterlab --ip=0.0.0.0 --port=8888 --notebook-dir=/root/try_everything --no-browser --allow-root --NotebookApp.password='sha1:1e7104ab2281:6ecd7924f35340c3616b743caa16d081641988de'"]
